@@ -1,0 +1,5 @@
+Logo slots:
+  /public/logo-light.jpeg  — used in light mode (your current logo is here)
+  /public/logo-dark.png    — add a white/light version for dark mode
+
+Until logo-dark.png exists, the header falls back to logo-light.jpeg in dark mode.

@@ -1,0 +1,77 @@
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: var(--header-stripe) solid var(--accent);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  padding-block: var(--section-pad-y) var(--space-6);
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--footer-text);
+  margin: 0 0 var(--space-3);
+}
+
+.site-footer__label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-3);
+}
+
+.site-footer__text {
+  color: var(--footer-text-muted);
+  margin: 0 0 var(--space-2);
+  max-width: 36ch;
+}
+
+.site-footer__nav {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.site-footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-btn);
+  text-transform: uppercase;
+  transition: color var(--duration-hover) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer a:hover {
+    color: var(--accent);
+  }
+}
+
+.site-footer__bottom {
+  border-top: var(--border-width) solid var(--on-dark-border-subtle);
+  padding-block: var(--space-4);
+}
+
+.site-footer__bottom p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--footer-text-muted);
+}
+
+@media (min-width: 1024px) {
+  .site-footer__grid {
+    grid-template-columns: 1.3fr 0.8fr 1fr;
+    gap: var(--space-7);
+  }
+}

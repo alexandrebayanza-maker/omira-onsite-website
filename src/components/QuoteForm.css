@@ -1,0 +1,32 @@
+.quote {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.quote__intro .section__title {
+  margin-bottom: var(--space-4);
+}
+
+.quote__intro .section__lead {
+  margin-bottom: 0;
+}
+
+.quote__form {
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--space-5);
+}
+
+@media (min-width: 1024px) {
+  .quote {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-7);
+  }
+
+  .quote__form {
+    padding: var(--space-6);
+  }
+}
