@@ -1,4 +1,4 @@
-import { company } from '../data/content';
+import { company, whatsappHref } from '../data/content';
 import './WhatsAppButton.css';
 
 /**
@@ -13,7 +13,7 @@ function WhatsAppButton() {
     return (
       <a
         className="whatsapp-fab"
-        href={`https://wa.me/${company.whatsapp}`}
+        href={whatsappHref()}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

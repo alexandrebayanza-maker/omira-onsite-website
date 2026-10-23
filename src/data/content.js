@@ -1,18 +1,35 @@
 /**
  * EDITABLE CONTENT
  * Change text and image paths here — components read from these arrays/objects.
- * Contact fields marked isPlaceholder are not real company details yet.
  */
 
 export const company = {
-  name: 'Omira Onsite Ltd',
-  shortName: 'Omira',
-  footerLine:
-    'Omira Onsite Ltd. Steel structures, metalwork, electrical services, and installations.',
-  copyright: '© 2026 Omira Onsite Ltd. All rights reserved.',
-  // Digits-only WhatsApp link stays empty until a real number is ready
-  whatsapp: '',
+  name: 'OMIRAN ON-SITE LTD',
+  shortName: 'Omiran',
+  line: 'On-site welding, steel structures, and electrical services across Rwanda.',
+  copyright: '© 2026 OMIRAN ON-SITE LTD. All rights reserved.',
+  phone: '+250 791 825 418',
+  phoneHref: 'tel:+250791825418',
+  /** Digits only, country code, no + or spaces. */
+  whatsapp: '250791825418',
+  whatsappMessage: 'Hello Omiran On-Site, I would like a quote for...',
+  // TO CONFIRM: email spelling
+  email: 'omiranonisite@gmail.com',
+  websiteLabel: 'omiranonsite.rw',
+  websiteHref: 'https://omiranonsite.rw',
 };
+
+export function whatsappHref() {
+  const text = encodeURIComponent(company.whatsappMessage);
+  return `https://wa.me/${company.whatsapp}?text=${text}`;
+}
+
+/** Hero and footer each stack these as three lines. */
+export const slogan = [
+  'Weld for Strength.',
+  'Build for Trust.',
+  'Power for Life.',
+];
 
 export const navLinks = [
   { id: 'services', label: 'Services' },
@@ -24,178 +41,224 @@ export const navLinks = [
 ];
 
 export const hero = {
-  tag: 'STEEL • METALWORK • ELECTRICAL',
-  headline: 'Built on Site. Built to Last.',
-  text: 'Omira Onsite Ltd handles steel structures, metal fabrication, electrical work, and door and window installation, from the first measurement to the final weld.',
+  tag: 'ON-SITE WELDING • STEEL STRUCTURES • ELECTRICAL',
+  headline: slogan,
+  text: "We deliver heavy-duty welding, electrical solutions, and structural installations directly to our clients' sites across Rwanda. We don't just build structures, we build lasting trust.",
   primaryCta: 'Our Services',
   secondaryCta: 'Request a Quote',
-  image: '/images/hero.jpg',
-  imageAlt: 'On-site steel and metalwork',
+  image: '/images/hero-rutare-roof.jpg',
+  imageAlt:
+    'Red steel roof framework under construction at Rutare, with two chimneys behind the building',
 };
 
 export const services = [
   {
     number: '01',
-    title: 'Warehouse Steel Structures',
+    title: 'Heavy Structural Steel Frameworks (Roofs)',
     description:
-      'Installation of strong steel structures and frameworks for warehouses and industrial buildings.',
-    image: '/images/service-warehouse.jpg',
-    imageAlt: 'Warehouse steel structures',
+      'Fabrication and professional welding of heavy-duty steel roof frames, trusses, and supports for large-scale commercial, industrial, and institutional projects.',
+    image: '/images/truss-assembly.jpg',
+    imageAlt: 'Worker assembling red steel roof trusses on a building frame',
   },
   {
     number: '02',
-    title: 'Heavy Structural Steel Frameworks and Roofs',
+    title: 'All Residential & Commercial Metalwork',
     description:
-      'Fabrication and welding of heavy roof trusses, steel frames, and supports for large construction projects.',
-    image: '/images/service-roof.jpg',
-    imageAlt: 'Heavy structural steel frameworks and roofs',
+      'On-site metal fabrication and welding for homes and commercial buildings: custom steel designs, gates, fences, safety doors, windows, handrails, and structural metal installations.',
+    image: '/images/site-gate.jpg',
+    imageAlt: 'Metal site gate in front of industrial buildings',
   },
   {
     number: '03',
-    title: 'Residential and Commercial Metalwork',
+    title: 'Imported Doors & Windows Installation',
     description:
-      'Custom gates, fences, security doors, windows, handrails, and steel designs, made and fitted on site.',
-    image: '/images/service-metalwork.jpg',
-    imageAlt: 'Residential and commercial metalwork',
+      'Professional on-site installation and precise fitting of high-quality imported metal, aluminium, and security doors, and modern window systems.',
+    image: '/images/framework-install.jpg',
+    imageAlt: 'Crew lifting a steel beam into place on a concrete frame',
+    imageLabel: 'Photo coming soon',
   },
   {
     number: '04',
-    title: 'Commercial and Domestic Electrical Services',
+    title: 'Commercial & Domestic Electrical Services',
     description:
-      'Building wiring, electrical installations, maintenance, and troubleshooting for homes and businesses.',
-    image: '/images/service-electrical.jpg',
-    imageAlt: 'Commercial and domestic electrical services',
+      'Complete building wiring, electrical system installations, maintenance, and troubleshooting for homes and businesses.',
+    image: '/images/welder-on-site.jpg',
+    imageAlt: 'OMIRAN ON-SITE LTD worker beside a steel framework on site',
+    imageLabel: 'Photo coming soon',
   },
   {
     number: '05',
-    title: 'Imported Doors and Windows Installation',
+    title: 'Warehouse Steel Structures',
     description:
-      'Precise fitting of imported metal, aluminium, and security doors, and modern window systems.',
-    image: '/images/service-doors.jpg',
-    imageAlt: 'Imported doors and windows installation',
+      'Precise installation of durable steel structures and frameworks for commercial warehouses and industrial buildings.',
+    image: '/images/rutare-finished-roof.jpg',
+    imageAlt: 'Finished blue steel warehouse roof at the Rutare site',
   },
 ];
 
-/**
- * Projects gallery — all photos use the discreet "Sample image" label.
- * For before/after pairs later, set type: 'before-after' with beforeImage + afterImage.
- */
-export const projectsSection = {
-  intro: 'A look at the type of work we do. Real project photos coming soon.',
-  sampleLabel: 'Sample image',
+/** Featured project. Nav “Projects” points at this section. */
+export const featuredProject = {
+  id: 'projects',
+  eyebrow: 'Featured project',
+  title: 'Rutare Brick Manufacturing',
+  text: 'Our flagship project: the full structural fabrication and installation of the industrial roof for Rutare Brick Manufacturing, built to support large-scale factory operations.',
+  details: [
+    { label: 'Location', value: 'Gahengeri, Rwamagana' },
+    {
+      label: 'Scope',
+      value:
+        'Complete fabrication and installation of the heavy-duty industrial roofing framework',
+    },
+    { label: 'Status', value: 'Completed' },
+  ],
+  before: {
+    label: 'Before',
+    image: '/images/rutare-before.jpg',
+    imageAlt:
+      'Rutare site before the roof, with an open steel framework and timber scaffolding',
+  },
+  after: {
+    label: 'After',
+    image: '/images/rutare-after.jpg',
+    imageAlt:
+      'Rutare site after the roof, a blue industrial building with two chimneys',
+  },
+  journeyHeading: 'Project journey',
+  journey: [
+    {
+      number: '01',
+      title: 'Assembling the roof trusses',
+      image: '/images/truss-assembly.jpg',
+      imageAlt: 'Worker assembling red steel roof trusses on a building frame',
+    },
+    {
+      number: '02',
+      title: 'Raising the framework',
+      image: '/images/roof-framework-progress.jpg',
+      imageAlt: 'Red steel roof framework raised on scaffolding at the Rutare site',
+    },
+    {
+      number: '03',
+      title: 'Welding with full protective gear',
+      image: '/images/welder-on-site.jpg',
+      imageAlt: 'Welder in full protective gear beside the steel framework',
+    },
+    {
+      number: '04',
+      title: 'Final installation and handover',
+      image: '/images/rutare-finished-roof.jpg',
+      imageAlt: 'Finished blue steel roof handed over at the Rutare site',
+    },
+  ],
 };
 
-export const projects = [
-  {
-    id: 'p1',
-    title: 'Warehouse frame installation',
-    type: 'single',
-    image: '/images/project-1.jpg',
-    size: 'large',
-  },
-  {
-    id: 'p2',
-    title: 'Roof truss welding',
-    type: 'single',
-    image: '/images/project-2.jpg',
-    size: 'tall',
-  },
-  {
-    id: 'p3',
-    title: 'Custom steel gate',
-    type: 'single',
-    image: '/images/project-3.jpg',
-    size: 'wide',
-  },
-  {
-    id: 'p4',
-    title: 'Commercial electrical wiring',
-    type: 'single',
-    image: '/images/project-4.jpg',
-    size: 'wide',
-  },
-  {
-    id: 'p5',
-    title: 'Security door fitting',
-    type: 'single',
-    image: '/images/project-5.jpg',
-    size: 'small',
-  },
-  {
-    id: 'p6',
-    title: 'Steel staircase and handrail',
-    type: 'single',
-    image: '/images/project-6.jpg',
-    size: 'small',
-  },
-];
-
 export const about = {
-  heading: 'We Work Where the Job Is',
-  text: 'Omira Onsite Ltd is a construction services company focused on steelwork, metal fabrication, electrical installations, and door and window fitting. As the name says, we work on site: we measure, build, weld, and install where your project happens. [Company story to be added by the CEO.]',
-  image: '/images/about.jpg',
-  imageAlt: 'Omira Onsite Ltd on-site work',
+  heading: 'Built From Field Experience',
+  text: 'OMIRAN ON-SITE LTD is a Rwandan limited liability company providing professional on-site welding and electrical services to the construction sector. We combine long field experience with modern engineering knowledge to deliver high-precision work for commercial, industrial, institutional, and residential projects. Before our official registration, our team had already completed many welding and electrical projects, building a strong reputation for reliability.',
+  image: '/images/team-on-site.jpg',
+  imageAlt:
+    'OMIRAN ON-SITE LTD crew in high-visibility vests beside a red steel roof frame',
+  aims: [
+    {
+      label: 'Vision',
+      text: 'To be the most trusted on-site welding service provider in Rwanda by 2031, empowering construction companies, engineers, and individuals through fast, safe, and high-quality solutions.',
+    },
+    {
+      label: 'Mission',
+      text: 'To provide high-quality welding and electrical services to our partners, delivering heavy-duty steel frameworks, warehouse structures, metalwork, door and window installations, and electrical services within short, well-planned timelines.',
+    },
+  ],
+};
+
+export const teamSection = {
+  id: 'team',
+  eyebrow: 'People',
+  heading: 'Our Team',
+  stats: [
+    {
+      value: '18+ years',
+      label: "Technical Director's welding experience",
+    },
+    { value: '2', label: 'civil engineers' },
+    { value: '1', label: 'electrical engineer' },
+    { value: '4', label: 'deployment teams' },
+  ],
+  text: 'Our Technical Department is led by a Technical Director with over 18 years of structural welding experience, working with two civil engineers and one electrical engineer. Every project is planned before work starts: scope, cost estimate, and timeline. Our four deployment teams, each with five certified welders and a team leader, can work on four sites at the same time.',
+  director: {
+    // TO CONFIRM: his permission to show this photo before launch.
+    image: '/images/technical-director.jpg',
+    imageAlt: 'Technical Director standing beside a red steel frame on site',
+    name: '[Name to confirm]',
+    role: 'Technical Director',
+  },
 };
 
 export const whyChooseUs = [
   {
-    title: 'On-site work',
-    text: 'We come to your project and do the work where it is needed.',
+    number: '01',
+    title: 'Speed, Secure Materials, Quality Work',
+    text: 'Fast work, secured materials, and skilled craftsmanship to reduce rework and protect quality.',
   },
   {
-    title: 'One team, many services',
-    text: 'Steel, metalwork, electrical, doors and windows, handled by one company.',
+    number: '02',
+    title: '24/7 Rotational Shifts',
+    text: 'Day and night welding shifts keep projects moving while staying safe and precise.',
   },
   {
-    title: 'Clear quotes',
-    text: 'We look at your project and give you a quote before work starts.',
+    number: '03',
+    title: 'Two-Year Service Warranty',
+    // TO CONFIRM: warranty terms with CEO before launch
+    text: 'A two-year warranty covering corrective work if an operational defect appears.',
   },
   {
-    title: 'Careful finishing',
-    text: 'We pay attention to strong welds, clean fitting, and safe installations.',
+    number: '04',
+    title: 'On-Site Safety',
+    text: 'Strict PPE rules on every site and insurance for our workforce.',
+  },
+  {
+    number: '05',
+    title: 'Clear, Milestone-Based Pricing',
+    text: 'Clear pricing by project stage, so you can control your budget with no surprise charges.',
   },
 ];
 
+export const equipmentStrip = {
+  text: 'We own our equipment: mobile welding generators, precision metal cutters, and electrical testing tools, so we can work on sites without grid power.',
+};
+
 export const quoteSection = {
-  heading: 'Tell Us About Your Project',
-  text: 'Send us the details and we will get back to you with a quote.',
+  heading: "Let's Build the Future Together",
+  text: 'Tell us about your project. We help construction firms, developers, and homeowners deliver work safely, efficiently, and to the required standard.',
 };
 
 export const serviceOptions = [
-  'Warehouse Steel Structures',
-  'Heavy Structural Steel Frameworks and Roofs',
-  'Residential and Commercial Metalwork',
-  'Commercial and Domestic Electrical Services',
-  'Imported Doors and Windows Installation',
+  ...services.map((service) => service.title),
   'Other / Not sure',
 ];
 
-/** Contact — all entries are placeholders until real details are confirmed */
 export const contactDetails = [
   {
     label: 'Phone',
-    value: '+250 7XX XXX XXX',
-    isPlaceholder: true,
+    value: company.phone,
+    href: company.phoneHref,
   },
   {
     label: 'WhatsApp',
-    value: '+250 7XX XXX XXX',
-    isPlaceholder: true,
-    key: 'whatsapp',
+    value: company.phone,
+    href: whatsappHref(),
   },
   {
     label: 'Email',
-    value: 'info@[company-domain]',
-    isPlaceholder: true,
+    value: company.email,
+    href: `mailto:${company.email}`,
   },
   {
     label: 'Location',
-    value: 'Kigali, Rwanda (to confirm)',
-    isPlaceholder: true,
+    value: 'Remera, Kisment, KN 5, Kigali, Rwanda',
   },
   {
-    label: 'Working hours',
-    value: 'Mon to Sat, 8:00 to 17:00 (to confirm)',
-    isPlaceholder: true,
+    label: 'Website',
+    value: company.websiteLabel,
+    href: company.websiteHref,
   },
 ];

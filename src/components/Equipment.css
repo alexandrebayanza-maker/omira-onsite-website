@@ -1,0 +1,13 @@
+.equipment {
+  background: var(--header-bg);
+  padding-block: var(--space-5);
+  border-top: var(--header-stripe) solid var(--accent);
+}
+
+.equipment p {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--header-text);
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+}

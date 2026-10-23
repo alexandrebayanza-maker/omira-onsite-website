@@ -19,6 +19,7 @@ function Services() {
             return (
               <li
                 key={service.number}
+                id={`service-${service.number}`}
                 className={`service-row reveal ${imageLeft ? 'service-row--flip' : ''}`}
               >
                 <div className="service-row__text">
@@ -29,7 +30,12 @@ function Services() {
                   <p className="service-row__desc">{service.description}</p>
                 </div>
                 <div className="service-row__media">
-                  <PhotoPanel src={service.image} alt={service.imageAlt} />
+                  <PhotoPanel
+                    src={service.image}
+                    alt={service.imageAlt}
+                    label={service.imageLabel}
+                    labelVariant="discreet"
+                  />
                 </div>
               </li>
             );

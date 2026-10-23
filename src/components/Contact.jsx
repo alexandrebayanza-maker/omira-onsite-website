@@ -1,9 +1,12 @@
-import { company, contactDetails } from '../data/content';
+import { contactDetails } from '../data/content';
 import './Contact.css';
 
-function Contact() {
-  const whatsappReady = Boolean(company.whatsapp);
+function externalLinkProps(href) {
+  if (!href.startsWith('http')) return {};
+  return { target: '_blank', rel: 'noopener noreferrer' };
+}
 
+function Contact() {
   return (
     <section className="section" id="contact" aria-labelledby="contact-heading">
       <div className="container">
@@ -12,27 +15,15 @@ function Contact() {
           <h2 id="contact-heading" className="section__title section__title--underline">
             Contact
           </h2>
-          <p className="section__lead">
-            Details below are placeholders until the company confirms them.
-          </p>
         </div>
 
         <dl className="contact-list reveal">
           {contactDetails.map((item) => (
             <div className="contact-item" key={item.label}>
-              <dt>
-                {item.label}
-                {item.isPlaceholder ? (
-                  <span className="contact-placeholder-tag">Placeholder</span>
-                ) : null}
-              </dt>
+              <dt>{item.label}</dt>
               <dd>
-                {item.key === 'whatsapp' && whatsappReady ? (
-                  <a
-                    href={`https://wa.me/${company.whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                {item.href ? (
+                  <a href={item.href} {...externalLinkProps(item.href)}>
                     {item.value}
                   </a>
                 ) : (

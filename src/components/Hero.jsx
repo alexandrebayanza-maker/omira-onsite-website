@@ -9,7 +9,11 @@ function Hero() {
         <div className="hero__content container">
           <p className="hero__tag">{hero.tag}</p>
           <h1 id="hero-heading" className="hero__title">
-            {hero.headline}
+            {hero.headline.map((line) => (
+              <span key={line} className="hero__line">
+                {line}
+              </span>
+            ))}
           </h1>
           <p className="hero__text">{hero.text}</p>
           <div className="hero__actions">

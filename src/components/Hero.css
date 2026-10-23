@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  container-type: inline-size;
 }
 
 .hero__tag {
@@ -30,10 +31,14 @@
 }
 
 .hero__title {
-  font-size: var(--text-hero);
+  font-size: min(var(--text-hero), 9.5cqi);
   font-weight: var(--weight-extrabold);
-  max-width: 14ch;
+  max-width: 11em;
   margin: 0 0 var(--space-4);
+}
+
+.hero__line {
+  display: block;
 }
 
 .hero__text {

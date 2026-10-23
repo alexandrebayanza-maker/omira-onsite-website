@@ -45,6 +45,25 @@
   cursor: not-allowed;
 }
 
+/* Icon only below the desktop form layout, so the pill does not cover fields or body text. */
+@media (max-width: 1023px) {
+  .whatsapp-fab span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .whatsapp-fab {
+    padding: var(--space-3);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .whatsapp-fab:active {
     transform: none;

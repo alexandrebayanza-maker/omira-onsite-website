@@ -13,10 +13,10 @@ function WhyChooseUs() {
         </div>
 
         <ol className="why-list">
-          {whyChooseUs.map((item, index) => (
-            <li key={item.title} className="why-item reveal">
+          {whyChooseUs.map((item) => (
+            <li key={item.number} className="why-item reveal">
               <span className="why-item__index" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
+                {item.number}
               </span>
               <div>
                 <h3 className="why-item__title">{item.title}</h3>

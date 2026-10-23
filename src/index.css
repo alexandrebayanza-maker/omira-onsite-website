@@ -1,5 +1,5 @@
 /* =========================================================
-   Omira Onsite Ltd — design tokens & global styles
+   OMIRAN ON-SITE LTD — design tokens & global styles
    ========================================================= */
 
 :root {
@@ -248,6 +248,7 @@ ul {
 .section {
   padding-block: var(--section-pad-y);
   background: var(--bg);
+  scroll-margin-top: calc(var(--header-height) + var(--header-stripe));
 }
 
 .section--alt {
